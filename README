@@ -1,0 +1,5 @@
+run 'bundle install'
+run 'rackup -p <port_number>'
+go to 'http://localhost:<port_number>'
+
+check the hello.rb file to see which routes we have.

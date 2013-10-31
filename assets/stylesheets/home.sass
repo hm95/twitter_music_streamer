@@ -1,0 +1,134 @@
+body
+  margin: 0
+  width: 100%
+  background-image: url("/images/furley_bg.png")
+  font: 14px Helvetica, Arial, sans-serif
+
+.container, .container2
+  position: relative
+  padding-top: 70px
+  text-align: center
+  .vid
+    display: inline-block
+    img
+      width: 350px
+      height: 250px
+      padding: 8px
+      -webkit-filter: blur(0px)
+
+    &:hover, &:not(:hover), img, div
+      -webkit-transition: all 1s
+      transition: all 1s
+    &:hover
+      cursor: pointer
+      img
+        -webkit-filter: blur(1px)
+      .rank
+        opacity: 0.2
+      .vidDetails
+        background: rgba(0, 0, 0, 0.5)
+
+    .vidDetails
+      position: absolute
+      height: 250px
+      width: 350px
+      margin: 8px
+      z-index: 2
+      div
+        display: inline-block
+        // width: 90%
+        font-size: 25px
+        font-weight: 700
+        font-family: Oxygen, sans-serif //Lato, Convergence, Imprima
+        text-transform: uppercase
+        color: #fff
+        text-shadow: 0 0 1px rgb(179, 179, 179)
+      .rank
+        padding-top: 25%
+        padding-right: 3px
+      .vidArtist
+        color: rgb(221, 221, 221)
+        text-shadow: 1px 1px 1px rgb(141, 141, 141)
+
+#overlay
+  display: none
+  position: fixed //or absolute, changes overlay under title bar area
+  top: 0px
+  bottom: 0
+  left: 0
+  right: 0
+  background-color: rgba(0, 0, 0, 0.75)
+  z-index: 5
+  -webkit-transition: all 1s
+  transition: all 1s
+  z-index: 100
+  &.show
+    display: block
+  &.hide
+    display: none
+
+  iframe
+    &:hover
+      color: rgba(0,0,0,0.7)
+
+  #videoContainer
+    display: inline-block
+    margin-top: 30px
+    padding: 10px 10px 7px
+    background: rgba(255, 255, 255, 0.4)
+    border-radius: 1px
+
+  #analyticsContainer
+    padding-top: 2%
+    height: 30%
+    .graph
+      padding: 10px
+      .highcharts-container
+        svg > rect:first-of-type
+          fill: rgba(255, 255, 255, 0.8)
+        svg > text:last-of-type > tspan
+          display: none
+
+#titlebar
+  display: inline-block
+  position: fixed
+  margin: 0
+  width: 100%
+  height: 40px
+  background-color: rgba(0, 0, 0, 0.7)
+  border-bottom: 1px solid rgb(27, 27, 27)
+  text-align: justify
+  font-size: 25px
+  z-index: 5
+  &:after
+    content: ''
+    display: inline-block
+    width: 100%
+    height: 0
+    font-size: 0
+    line-height: 0
+  div
+    display: inline-block
+  #title
+    a
+      font-family: 'Oleo Script Swash Caps', cursive
+      text-shadow: 0 0 5px rgb(0, 0, 0)
+    margin-left: 1%
+    font-size: 25px
+    vertical-align: middle
+  #tabs
+    margin-right: 3%
+    line-height: 34px
+    text-align: center
+    a
+      font-size: 15px
+      padding: 13px 5px
+      &:hover, &.selected:hover
+        background: rgba(166, 166, 166, 0.8)
+      &.selected
+        background: rgba(128, 128, 128, 0.8)
+  a
+    font-weight: 300
+    color: #FFF
+    z-index: 5
+    text-decoration: none
